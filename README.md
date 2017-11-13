@@ -5,7 +5,7 @@
       libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
       libcairo2-dev libx11-dev libxpm-dev libxt-dev mercurial ruby1.9.1 ruby1.9.1-dev
     $ cd ~/Downloads
-    $ hg clone https://vim.googlecode.com/hg/ vim
+    $ git clone https://github.com/vim/vim.git
     $ cd vim/src 
     $ ./configure --with-features=huge --enable-gui=gnome2 --enable-rubyinterp 
     $ make; sudo make install
