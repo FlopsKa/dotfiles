@@ -41,8 +41,11 @@ set noswapfile
 nnoremap j gj
 nnoremap k gk
 
-"" molokai colorscheme
-colorscheme molokai 
+"" solarized colorscheme
+let g:solarized_termcolors=256
+set t_Co=256
+set background=dark
+colorscheme solarized 
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
@@ -52,6 +55,11 @@ set listchars=tab:?\ ,eol:¬
 
 "" no toolbar and no scrollbar
 set guioptions=aegimLt
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
 
 " CTRL-X and SHIFT-Del are Cut
 vnoremap <C-X> "+x
@@ -64,3 +72,9 @@ vnoremap <C-Insert> "+y
 " CTRL-V and SHIFT-Insert are Paste
 map <C-V>       "+gP
 map <S-Insert>      "+gP
+
+" config for vim-latex plugin
+" disable folding
+:let Tex_FoldedSections=""
+:let Tex_FoldedEnvironments=""
+:let Tex_FoldedMisc=""
